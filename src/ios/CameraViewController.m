@@ -279,7 +279,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [_cancelButton setImage:cancelIcon
                    forState:UIControlStateNormal];
 
-    CGFloat screenOffset = (screenWidth/2 - frameWidth/2)/2 - buttonSize/2;
+    CGFloat screenOffset = ((screenWidth/2 - frameWidth/2)/2 - buttonSize/2) + 20;
     NSLog(@"screenOffset %f", screenOffset);
 
     _cancelButton.frame = CGRectMake(screenOffset, screenHeight-screenOffset-buttonSize, buttonSize, buttonSize);

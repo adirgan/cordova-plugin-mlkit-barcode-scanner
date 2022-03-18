@@ -6,24 +6,27 @@ The purpose of this project is to provide a barcode scanner utilizing the Google
 
 ## Plugin Dependencies
 
-Dependency | Version | Info
----------- | ------- | --------
-`cordova-android` | `>=8.0.0`
-`cordova-ios` | `>=4.5.0`
-`cordova-plugin-androidx` | ` ^3.0.0` | If cordova-android <= 9.0.0
-`cordova-plugin-androidx-adapter` | ` ^1.1.3`
+| Dependency                        | Version   | Info                        |
+| --------------------------------- | --------- | --------------------------- |
+| `cordova-android`                 | `>=8.0.0` |
+| `cordova-ios`                     | `>=4.5.0` |
+| `cordova-plugin-androidx`         | ` ^3.0.0` | If cordova-android <= 9.0.0 |
+| `cordova-plugin-androidx-adapter` | ` ^1.1.3` |
 
 ## Prerequisites
 
 If your cordova-android version is below 9.0.0, you have to install `cordova-plugin-androidx` first beforce installing this plugin. Execute this command in your terminal:
+
 ```bash
 cordova plugin add cordova-plugin-androidx
 ```
+
 ## Installation
 
 Run this command in your project root.
+
 ```bash
-cordova plugin add cordova-plugin-mlkit-barcode-scanner
+cordova plugin add https://github.com/adirgan/cordova-plugin-mlkit-barcode-scanner.git
 ```
 
 ## Supported Platforms
@@ -33,31 +36,32 @@ cordova plugin add cordova-plugin-mlkit-barcode-scanner
 
 ## Barcode Support
 
-| 1d formats                                      | Android | iOS     |
-| ----------------------------------------------- | ------- | ------- |
-| Codabar                                         | ✓       | ✓       |
-| Code 39                                         | ✓       | ✓       |
-| Code 93                                         | ✓       | ✓       |
-| Code 128                                        | ✓       | ✓       |
-| EAN-8.                                          | ✓       | ✓       |
-| EAN-13                                          | ✓       | ✓       |
-| ITF                                             | ✓       | ✓       |
-| MSI                                             | ✗       | ✗       |
-| RSS Expanded                                    | ✗       | ✗       |
-| RSS-14                                          | ✗       | ✗       |
-| UPC-A                                           | ✓       | ✓       |
-| UPC-E                                           | ✓       | ✓       |
+| 1d formats   | Android | iOS |
+| ------------ | ------- | --- |
+| Codabar      | ✓       | ✓   |
+| Code 39      | ✓       | ✓   |
+| Code 93      | ✓       | ✓   |
+| Code 128     | ✓       | ✓   |
+| EAN-8.       | ✓       | ✓   |
+| EAN-13       | ✓       | ✓   |
+| ITF          | ✓       | ✓   |
+| MSI          | ✗       | ✗   |
+| RSS Expanded | ✗       | ✗   |
+| RSS-14       | ✗       | ✗   |
+| UPC-A        | ✓       | ✓   |
+| UPC-E        | ✓       | ✓   |
 
-| 2d formats                                      | Android | iOS     |
-| ----------------------------------------------- | ------- | ------- |
-| Aztec                                           | ✓       | ✓       |
-| Codablock                                       | ✗       | ✗       |
-| Data Matrix                                     | ✓       | ✓       |
-| MaxiCode                                        | ✗       | ✗       |
-| PDF417                                          | ✓       | ✓       |
-| QR Code                                         | ✓       | ✓       |
+| 2d formats  | Android | iOS |
+| ----------- | ------- | --- |
+| Aztec       | ✓       | ✓   |
+| Codablock   | ✗       | ✗   |
+| Data Matrix | ✓       | ✓   |
+| MaxiCode    | ✗       | ✗   |
+| PDF417      | ✓       | ✓   |
+| QR Code     | ✓       | ✓   |
 
 :information_source: Note that this API does not recognize barcodes in these forms:
+
 - 1D Barcodes with only one character
 - Barcodes in ITF format with fewer than six characters
 - Barcodes encoded with FNC2, FNC3 or FNC4
@@ -97,10 +101,10 @@ const defaultOptions = {
     UPCA: true,
     UPCE: true,
     PDF417: true,
-    Aztec: true
+    Aztec: true,
   },
-  detectorSize: 0.6
-}
+  detectorSize: 0.6,
+};
 ```
 
 ### Output/Return value
@@ -117,36 +121,43 @@ result: {
 ## Run the test app
 
 Install cordova
+
 ```
 npm i -g cordova
 ```
 
 Go to test app
+
 ```
 cd test/scan-test-app
 ```
 
 Install node modules
+
 ```
 npm i
 ```
 
 Prepare Cordova
+
 ```
 cordova platform add android && cordova plugin add ../../ --link --force
 ```
 
 Build and run the project Android
+
 ```
 cordova build android && cordova run android
 ```
+
 and iOS
+
 ```
 cordova build ios && cordova run ios
 ```
 
 ## To-dos <small>(2021-May)</small>
 
-- [X] Android: Migrate from deprecatd Camera API to CameraX
-- [X] Android: Get Viewfinder (detectorSize) to work
-- [X] Android: Test functionality with Android 5.1 (API 22)
+- [x] Android: Migrate from deprecatd Camera API to CameraX
+- [x] Android: Get Viewfinder (detectorSize) to work
+- [x] Android: Test functionality with Android 5.1 (API 22)
